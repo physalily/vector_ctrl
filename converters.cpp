@@ -25,7 +25,7 @@ public:
     clark();
     park();
   }
-  void inv_convert(double Iq_diff, double Iq_diff){
+  void inv_convert(double Id_diff, double Iq_diff){
     currents_diff(double Id_diff, double Iq_diff)
     inv_park();
     inv_clark();
