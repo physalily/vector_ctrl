@@ -25,6 +25,6 @@ inline double PID::re(double  cte){
   p_diff = cte;
   i_diff += cte;
   d_diff = cte - prev_val;
-  prev_cte = cte;
+  prev_val = cte;
   return kp *  p_diff + ki * i_diff + kd * d_diff;
 }
