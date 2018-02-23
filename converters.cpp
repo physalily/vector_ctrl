@@ -18,14 +18,18 @@ private:
   void currents_diff(double Id_diff, double Iq_diff);
 
 public:
-  void vector_converter(int ID){ this ->ID = ID; }
+  vector_converter(){}
+  vector_converter(int ID){ this -> ID = ID; }
   int reID(){return ID;}
+
+  //park, clark converts
   void convert(double Iu, double Iv, double Iw, double angle){
     angle_set(angle);
     currents_set(Iu, Iv, Iw);
     clark();
     park();
   }
+  //inverse park, clark converts
   void inv_convert(double Id_diff, double Iq_diff){
     currents_diff(double Id_diff, double Iq_diff)
     inv_park();
@@ -33,6 +37,7 @@ public:
   }
 }
 
+//converters contents
 inline void vector_converter::clark()
 {
   Ia = Iu;
@@ -52,6 +57,8 @@ inline void vector_converter::park()
    Ia = cos(angle) * Id + -sin(angle) * Iq;
    Ib = sin(angle) * Id + cos(angle) * Iq;
  }
+
+ //set fanctions contents
  inline void vector_converter::angle_set(double angle){
    this ->angle = angle;
  }
