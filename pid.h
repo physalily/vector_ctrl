@@ -9,25 +9,22 @@ private:
   double prev_val;
 public:
   PID(double kp, double ki, double kd);
-  void update(double cte);
-  double re();
+  double re(double cte);
 };
 
 inline PID::PID(double kp, double ki, double kd){
   this -> kp = kp;
   this -> ki = ki;
   this -> kd = kd;
+  i_diff = 0;
   d_diff = 0;
   prev_val = 0;
 }
 
-inline void PID::update(double cte){
+inline double PID::re(double  cte){
   p_diff = cte;
   i_diff += cte;
   d_diff = cte - prev_val;
   prev_cte = cte;
-}
-
-inline double PID::re(){
   return kp *  p_diff + ki * i_diff + kd * d_diff;
 }
