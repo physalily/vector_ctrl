@@ -1,5 +1,5 @@
-#ifndef _GUARD
-#define _GUARD
+#ifndef GUARD_
+#define GUARD_
 #include <math.h>
 #endif
 
