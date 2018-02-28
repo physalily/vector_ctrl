@@ -9,7 +9,7 @@ private:
   double prev_val;
 public:
   PID(double kp, double ki, double kd);
-  double re(double cte);
+  double update(double cte);
 };
 //arg is PID constant
 inline PID::PID(double kp, double ki, double kd){
@@ -21,7 +21,7 @@ inline PID::PID(double kp, double ki, double kd){
   prev_val = 0;
 }
 //arg is difference from reference value
-inline double PID::re(double  cte){
+inline double PID::update(double  cte){
   p_diff = cte;
   i_diff += cte;
   d_diff = cte - prev_val;
