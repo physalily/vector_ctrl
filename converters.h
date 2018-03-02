@@ -6,7 +6,7 @@
 class vector_converter{
 private:
   int ID = 0;
-  double r3 = 1.7320508075;
+  double r3 = sqrt(3);
   double Iu, Iv, Iw;
   double Ia, Ib, Id, Iq;
   double angle;
@@ -61,7 +61,7 @@ inline void vector_converter::park()
  }
 
  //set fanctions contents
- inline void vector_converter::angle_set(double angle){
+ inline void vector_converter::angle_set(double angle){//arg is radian
    this ->angle = angle;
  }
  inline void vector_converter::currents_set(double Iu, double Iv, double Iw){
