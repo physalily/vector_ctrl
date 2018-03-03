@@ -37,6 +37,10 @@ public:
     inv_park();
     inv_clark();
   }
+  //outputs
+  double out_u(){return this -> Iu;}
+  double out_v(){return this -> Iv;}
+  double out_w(){return this -> Iw;}
 }
 
 //converters contents
