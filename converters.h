@@ -1,7 +1,5 @@
-#ifndef GUARD_
-#define GUARD_
+#pragma once
 #include <math.h>
-#endif
 
 class vector_converter{
 private:

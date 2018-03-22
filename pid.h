@@ -5,7 +5,7 @@ private:
   double kd;
   double p_diff;
   double i_diff;
-  double d_diff;
+  double d_diff
   double prev_val;
 public:
   PID(double kp, double ki, double kd);
