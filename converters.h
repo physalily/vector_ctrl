@@ -21,7 +21,6 @@ private:
 
 public:
   vector_converter(int ID);
-  int reID(){return ID;}
 
   //park, clark converts
   void convert(double Iu, double Iv, double Iw, double angle){
@@ -37,6 +36,7 @@ public:
     inv_clark();
   }
   //outputs
+  int out_ID(){return ID;}
   double out_u(){return this -> Iu;}
   double out_v(){return this -> Iv;}
   double out_w(){return this -> Iw;}
