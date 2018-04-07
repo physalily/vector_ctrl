@@ -8,6 +8,8 @@ private:
   double Iu, Iv, Iw;
   double Ia, Ib, Id, Iq;
   double angle;
+  double shunt_resistor;
+  double used_voltage;
 
   void clark();
   void park();
@@ -18,8 +20,7 @@ private:
   void currents_diff(double Id_diff, double Iq_diff);
 
 public:
-  vector_converter(){}
-  vector_converter(int ID){ this -> ID = ID; }
+  vector_converter(int ID);
   int reID(){return ID;}
 
   //park, clark converts
@@ -39,6 +40,13 @@ public:
   double out_u(){return this -> Iu;}
   double out_v(){return this -> Iv;}
   double out_w(){return this -> Iw;}
+  double out_duty(double current){return (current * shunt_resistor / used_voltage) * (current * shunt_resistor / used_voltage);}
+}
+
+inline vector_converter::vector_converter(int ID, double shunt_resistor, double used_voltage){
+  this -> ID = ID;
+  this -> shunt_resistor = shunt_resistor;
+  this -> used_voltage = used_voltage;
 }
 
 //converters contents
